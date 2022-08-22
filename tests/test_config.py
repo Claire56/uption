@@ -1,5 +1,5 @@
 import pytest
-from src.utils import Inputs , Utilities
+from src.utils import DataDetails , Utilities
 import pandas as pd 
 
 

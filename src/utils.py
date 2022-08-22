@@ -1,4 +1,6 @@
-class Inputs:
+import typing as t
+
+class DataDetails:
     datafile = './data/startup data.csv'
 
 class Utilities:

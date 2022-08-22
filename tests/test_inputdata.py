@@ -4,10 +4,18 @@ from src.utils import *
 import pandas as pd 
 from sklearn.model_selection import train_test_split
 
-
 def test_status_unique_values(sample_input_data):
     # given 
     data = sample_input_data
+    unique_values = data['status'].unique()
+    assert len(unique_values) == 2
+
+
+@pytest.mark.parametrize(
+    'size' , [4,5,7])
+def test_status_unique_values_multiple(sample_input_data, size):
+    # given 
+    data = sample_input_data.head(size)
     unique_values = data['status'].unique()
     assert len(unique_values) == 2
 
@@ -18,6 +26,9 @@ class TestTraindata:
         train = X_train[:30]
     def test_train(train):
         assert train.shape[0] == 30
+    def test_train2(train):
+        assert type(train) == 'Object'
+        
         
 
         
