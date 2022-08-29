@@ -3,23 +3,30 @@ import typing as t
 
 from pydantic import BaseModel, validator
 from strictyaml import load, YAML
+import packages
 
-from packages import src , get_project_root , ROOT_DIR
+from packages import  get_project_root , ROOT_DIR
 import os 
+
+
+print(f'the ROOT DIR is: {ROOT_DIR}')
 
 # Project Directories
 
-PACKAGE_ROOT = Path(src.__file__).resolve().parent
+# PACKAGE_ROOT = Path(packages.src.__file__).resolve().parent
+PACKAGE_ROOT = get_project_root().resolve().parent
 ROOT = PACKAGE_ROOT.parent
-CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
-TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
-DATASET_DIR = PACKAGE_ROOT / "datasets"
+CONFIG_FILE_PATH = PACKAGE_ROOT / "packages/src/config.yml"
+TRAINED_MODEL_DIR = PACKAGE_ROOT / "packages/src/trained_models"
+DATASET_DIR = PACKAGE_ROOT / "packages/src/datasets"
 
-# claire version 
-ROOT = get_project_root()
-CONFIG_FILE_PATH = ROOT_DIR / "config.yml"
-TRAINED_MODEL_DIR = ROOT_DIR / "trained_models"
-DATASET_DIR = ROOT_DIR / "datasets"
+# # claire version 
+# ROOT = get_project_root()
+# CONFIG_FILE_PATH = ROOT_DIR  + "/config.yml"
+# TRAINED_MODEL_DIR = ROOT_DIR + "/trained_models"
+# DATASET_DIR = ROOT_DIR + "/datasets"
+
+# print(f'the ROOT DIR is: {ROOT_DIR}')
 
 
 
