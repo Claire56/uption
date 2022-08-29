@@ -1,6 +1,6 @@
 # import sys , os
 import pytest
-from src.utils import *
+from packages.src.utils import *
 import pandas as pd 
 from sklearn.model_selection import train_test_split
 
@@ -12,7 +12,7 @@ def test_status_unique_values(sample_input_data):
 
 
 @pytest.mark.parametrize(
-    'size' , [4,5,7])
+    'size' , [10,5,7])
 def test_status_unique_values_multiple(sample_input_data, size):
     # given 
     data = sample_input_data.head(size)

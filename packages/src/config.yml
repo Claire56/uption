@@ -1,0 +1,137 @@
+# Package Overview
+package_name: src
+
+# Data Files
+training_data_file: final_data.csv
+test_data_file: test.csv
+
+# this variable is to calculate the temporal variable
+# but is dropped prior to model training.
+drop_features: "Unnamed: 0"
+
+pipeline_name: startup_classifier
+pipeline_save_file: startup_classifier_output_v
+
+# Variables
+# The variable we are attempting to predict (status)
+target: labels
+
+# Will cause syntax errors since they begin with numbers
+variables_to_rename:
+  funding_rounds: funds_rounds
+  funding_total_usd: funds_total_amt
+
+features:
+  - age_first_funding_year
+  - age_last_funding_year
+  - age_first_milestone_year
+  - age_last_milestone_year
+  - relationships
+  - funding_rounds
+  - funding_total_usd
+  - milestones
+  - is_CA
+  - is_NY
+  - is_MA
+  - is_TX
+  - is_otherstate
+  - is_software
+  - is_web
+  - is_mobile
+  - is_enterprise
+  - is_advertising
+  - is_gamesvideo
+  - is_ecommerce
+  - is_biotech
+  - is_consulting
+  - is_othercategory
+  - has_VC
+  - has_angel
+  - has_roundA
+  - has_roundB
+  - has_roundC
+  - has_roundD
+  - avg_participants
+  - is_top500
+  - category_code
+  
+  
+
+    # this one is only to calculate temporal variable:
+
+numerical_vars:
+  - age_first_funding_year
+  - age_last_funding_year
+  - age_first_milestone_year
+  - age_last_milestone_year
+  - relationships
+  - funding_rounds
+  - funding_total_usd
+  - milestones
+  - is_CA
+  - is_NY
+  - is_MA
+  - is_TX
+  - is_otherstate
+  - is_software
+  - is_web
+  - is_mobile
+  - is_enterprise
+  - is_advertising
+  - is_gamesvideo
+  - is_ecommerce
+  - is_biotech
+  - is_consulting
+  - is_othercategory
+  - has_VC
+  - has_angel
+  - has_roundA
+  - has_roundB
+  - has_roundC
+  - has_roundD
+  - avg_participants
+  - is_top500
+
+
+categorical_vars:
+  - category_code
+
+# temporal_vars: YearRemodAdd
+
+# Validation
+# numerical variables with NA in train set
+numerical_vars_with_na:
+  # - LotFrontage
+
+numerical_na_not_allowed:
+  - milestones
+  - is_CA
+  - is_NY
+  - is_MA
+  - is_TX
+  - is_otherstate
+  - is_software
+  - is_web
+
+# set train/test split
+test_size: 0.2
+
+# to set the random seed
+random_state: 0
+
+# The number of boosting stages to perform
+n_estimators: 50
+
+# the minimum frequency a label should have to be considered frequent
+# and not be removed.
+rare_label_tol: 0.01
+
+# the minimum number of categories a variable should have in order for
+# the encoder to find frequent labels
+rare_label_n_categories: 5
+
+# loss function to be optimized
+loss: ls
+allowed_loss_functions:
+  - ls
+  - huber

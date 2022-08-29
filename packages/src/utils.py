@@ -1,7 +1,7 @@
 import typing as t
 
 class DataDetails:
-    datafile = './data/startup data.csv'
+    datafile = './packages/data/startup data.csv'
 
 class Utilities:
     features_file = 'data/features.txt'

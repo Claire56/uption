@@ -4,14 +4,23 @@ import typing as t
 from pydantic import BaseModel, validator
 from strictyaml import load, YAML
 
-import src
+from packages import src , get_project_root , ROOT_DIR
+import os 
 
 # Project Directories
+
 PACKAGE_ROOT = Path(src.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
 TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
 DATASET_DIR = PACKAGE_ROOT / "datasets"
+
+# claire version 
+ROOT = get_project_root()
+CONFIG_FILE_PATH = ROOT_DIR / "config.yml"
+TRAINED_MODEL_DIR = ROOT_DIR / "trained_models"
+DATASET_DIR = ROOT_DIR / "datasets"
+
 
 
 class AppConfig(BaseModel):
@@ -38,8 +47,8 @@ class ModelConfig(BaseModel):
     features: t.Sequence[str]
     numerical_vars: t.Sequence[str]
     categorical_vars: t.Sequence[str]
-    temporal_vars: str
-    numerical_vars_with_na: t.Sequence[str]
+    # temporal_vars: str
+    # numerical_vars_with_na: t.Sequence[str]
     numerical_na_not_allowed: t.Sequence[str]
     test_size: float
     random_state: int

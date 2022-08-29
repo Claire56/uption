@@ -84,7 +84,7 @@ Here the users recieve their home estimate and a few statistics <br>
 ## Setup and installation
 On local machine, go to desired directory. Clone  repository:
 
-$ git clone https://github.com/Claire-Kimbugwe/House_value_estimate <br>
+$ git clone https://github.com/Claire-Kimbugwe/Startup_value_estimate <br>
 Create a virtual environment in the directory:
 
 $ virtualenv env<br>
