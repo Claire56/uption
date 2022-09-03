@@ -48,14 +48,15 @@ class ModelConfig(BaseModel):
     training and feature engineering.
     """
 
-    drop_features: str
+    # drop_features: str
+    drop_features:t.Sequence[str]
     target: str
     variables_to_rename: t.Dict
     features: t.Sequence[str]
     numerical_vars: t.Sequence[str]
     categorical_vars: t.Sequence[str]
     # temporal_vars: str
-    # numerical_vars_with_na: t.Sequence[str]
+    numerical_vars_with_na: t.Sequence[str]
     numerical_na_not_allowed: t.Sequence[str]
     test_size: float
     random_state: int

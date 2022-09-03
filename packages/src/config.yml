@@ -2,12 +2,29 @@
 package_name: src
 
 # Data Files
-training_data_file: final_data.csv
+training_data_file: startup_data.csv
 test_data_file: test.csv
 
 # this variable is to calculate the temporal variable
 # but is dropped prior to model training.
-drop_features: "Unnamed: 0"
+drop_features: 
+  - id
+  - object_id
+  - status
+  - state_code
+  - city
+  - state_code.1
+  - name
+  - zip_code
+  - closed_at
+  - latitude
+  - longitude
+  - 'Unnamed: 0'
+  - 'Unnamed: 6'
+  - founded_at
+  - first_funding_at
+  - last_funding_at
+
 
 pipeline_name: startup_classifier
 pipeline_save_file: startup_classifier_output_v
@@ -22,6 +39,19 @@ variables_to_rename:
   funding_total_usd: funds_total_amt
 
 features:
+  - 'Unnamed: 0'
+  - state_code
+  - latitude
+  - longitude
+  - zip_code
+  - id
+  - city
+  - 'Unnamed: 6'
+  - name
+  - founded_at
+  - closed_at
+  - first_funding_at
+  - last_funding_at
   - age_first_funding_year
   - age_last_funding_year
   - age_first_milestone_year
@@ -30,11 +60,13 @@ features:
   - funding_rounds
   - funding_total_usd
   - milestones
+  - state_code.1
   - is_CA
   - is_NY
   - is_MA
   - is_TX
   - is_otherstate
+  - category_code
   - is_software
   - is_web
   - is_mobile
@@ -45,6 +77,7 @@ features:
   - is_biotech
   - is_consulting
   - is_othercategory
+  - object_id
   - has_VC
   - has_angel
   - has_roundA
@@ -53,13 +86,15 @@ features:
   - has_roundD
   - avg_participants
   - is_top500
-  - category_code
-  
-  
+  - status
+
 
     # this one is only to calculate temporal variable:
 
 numerical_vars:
+  - 'Unnamed: 0'
+  - latitude
+  - longitude
   - age_first_funding_year
   - age_last_funding_year
   - age_first_milestone_year
@@ -92,16 +127,32 @@ numerical_vars:
   - avg_participants
   - is_top500
 
-
 categorical_vars:
+  - state_code
+  - zip_code
+  - id
+  - city
+  - 'Unnamed: 6'
+  - name
+  - founded_at
+  - closed_at
+  - first_funding_at
+  - last_funding_at
+  - state_code.1
   - category_code
+  - object_id
+  - status
 
 # temporal_vars: YearRemodAdd
 
 # Validation
 # numerical variables with NA in train set
 numerical_vars_with_na:
-  # - LotFrontage
+  # - Unnamed: 6
+  # - closed_at
+  - age_first_milestone_year
+  - age_last_milestone_year
+  # - state_code.1
 
 numerical_na_not_allowed:
   - milestones

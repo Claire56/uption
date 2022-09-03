@@ -1,0 +1,128 @@
+FEATURES
+- Unnamed: 0
+- state_code
+- latitude
+- longitude
+- zip_code
+- id
+- city
+- Unnamed: 6
+- name
+- labels
+- founded_at
+- closed_at
+- first_funding_at
+- last_funding_at
+- age_first_funding_year
+- age_last_funding_year
+- age_first_milestone_year
+- age_last_milestone_year
+- relationships
+- funding_rounds
+- funding_total_usd
+- milestones
+- state_code.1
+- is_CA
+- is_NY
+- is_MA
+- is_TX
+- is_otherstate
+- category_code
+- is_software
+- is_web
+- is_mobile
+- is_enterprise
+- is_advertising
+- is_gamesvideo
+- is_ecommerce
+- is_biotech
+- is_consulting
+- is_othercategory
+- object_id
+- has_VC
+- has_angel
+- has_roundA
+- has_roundB
+- has_roundC
+- has_roundD
+- avg_participants
+- is_top500
+- status
+
+ NUMERIC FEATURES
+- Unnamed: 0
+- latitude
+- longitude
+- labels
+- age_first_funding_year
+- age_last_funding_year
+- age_first_milestone_year
+- age_last_milestone_year
+- relationships
+- funding_rounds
+- funding_total_usd
+- milestones
+- is_CA
+- is_NY
+- is_MA
+- is_TX
+- is_otherstate
+- is_software
+- is_web
+- is_mobile
+- is_enterprise
+- is_advertising
+- is_gamesvideo
+- is_ecommerce
+- is_biotech
+- is_consulting
+- is_othercategory
+- has_VC
+- has_angel
+- has_roundA
+- has_roundB
+- has_roundC
+- has_roundD
+- avg_participants
+- is_top500
+
+ CATEGORICAL FEATURES
+- state_code
+- zip_code
+- id
+- city
+- Unnamed: 6
+- name
+- founded_at
+- closed_at
+- first_funding_at
+- last_funding_at
+- state_code.1
+- category_code
+- object_id
+- status
+
+ FEATURES WITH MISSING VALUES 
+- Unnamed: 6
+- closed_at
+- age_first_milestone_year
+- age_last_milestone_year
+- state_code.1
+
+ DROP FEATURES  
+- id
+- object_id
+- status
+- state_code
+- city
+- state_code.1
+- name
+- zip_code
+- closed_at
+- latitude
+- longitude
+- Unnamed: 0
+- Unnamed: 6
+- founded_at
+- first_funding_at
+- last_funding_at

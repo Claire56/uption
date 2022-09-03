@@ -11,7 +11,7 @@ from src.processing.validation import validate_inputs
 _logger = logging.getLogger(__name__)
 
 pipeline_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"
-_price_pipe = load_pipeline(file_name=pipeline_file_name)
+_startup_pipe = load_pipeline(file_name=pipeline_file_name)
 
 
 def make_prediction(*, input_data: t.Union[pd.DataFrame, dict],) -> dict:
@@ -22,7 +22,7 @@ def make_prediction(*, input_data: t.Union[pd.DataFrame, dict],) -> dict:
     results = {"predictions": None, "version": _version, "errors": errors}
 
     if not errors:
-        predictions = _price_pipe.predict(
+        predictions = _startup_pipe.predict(
             X=validated_data[config.model_config.features]
         )
         _logger.info(

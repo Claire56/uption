@@ -1,6 +1,6 @@
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OrdinalEncoder
-from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.pipeline import Pipeline
 from feature_engine.encoding import RareLabelEncoder
 
@@ -59,7 +59,7 @@ startup_pipe = Pipeline(
         ),
         (
             "gb_model",
-            GradientBoostingRegressor(
+            GradientBoostingClassifier(
                 loss=config.model_config.loss,
                 random_state=config.model_config.random_state,
                 n_estimators=config.model_config.n_estimators,
