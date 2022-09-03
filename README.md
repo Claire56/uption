@@ -26,7 +26,7 @@ Data Wrangling: Pandas, Numpy , seaborn, matplotlib <br>
 Framework: Flask <br>
 Backend: Python, Tox,SciKit_Learn, pytest, <br>
 Frontend: Javascript , AJAX, JSON , JQuery, Jinja, HTML, CSS, Bootstrap <br>
-Model Monitoring: Prometheus, Grafana, 
+Model Monitoring: Prometheus, Grafana, <br>
 Cloud services:
 
 ## Demo
@@ -79,7 +79,7 @@ Here the users recieve their results <br>
 ## Setup and installation
 On local machine, go to desired directory. Clone  repository:
 
-$ git clone https://github.com/Claire-Kimbugwe/Startup_value_estimate <br>
+$ git clone https://github.com/Claire56/uption.git <br>
 Create a virtual environment in the directory:
 
 $ virtualenv env<br>
