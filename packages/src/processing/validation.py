@@ -1,6 +1,6 @@
 import typing as t
 
-from src.config.core import config
+from packages.src.config.core import config
 
 import numpy as np
 import pandas as pd

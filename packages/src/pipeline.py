@@ -4,8 +4,8 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.pipeline import Pipeline
 from feature_engine.encoding import RareLabelEncoder
 
-from processing import preprocessors as pp
-from config.core import config
+from packages.src.processing import preprocessors as pp
+from packages.src.config.core import config
 
 import logging
 
@@ -29,13 +29,13 @@ startup_pipe = Pipeline(
                 transformer=SimpleImputer(strategy="constant", fill_value="missing"),
             ),
         ),
-        (
-            "temporal_variable",
-            pp.TemporalVariableEstimator(
-                variables=config.model_config.temporal_vars,
-                reference_variable=config.model_config.drop_features,
-            ),
-        ),
+        # (
+        #     "temporal_variable",
+        #     pp.TemporalVariableEstimator(
+        #         variables=config.model_config.temporal_vars,
+        #         reference_variable=config.model_config.drop_features,
+        #     ),
+        # ),
         (
             "rare_label_encoder",
             RareLabelEncoder(
