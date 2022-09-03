@@ -9,8 +9,6 @@ from packages import  get_project_root , ROOT_DIR
 import os 
 
 
-print(f'the ROOT DIR is: {ROOT_DIR}')
-
 # Project Directories
 
 # PACKAGE_ROOT = Path(packages.src.__file__).resolve().parent
@@ -19,14 +17,6 @@ ROOT = PACKAGE_ROOT.parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / "packages/src/config.yml"
 TRAINED_MODEL_DIR = PACKAGE_ROOT / "packages/src/trained_models"
 DATASET_DIR = PACKAGE_ROOT / "packages/src/datasets"
-
-# # claire version 
-# ROOT = get_project_root()
-# CONFIG_FILE_PATH = ROOT_DIR  + "/config.yml"
-# TRAINED_MODEL_DIR = ROOT_DIR + "/trained_models"
-# DATASET_DIR = ROOT_DIR + "/datasets"
-
-# print(f'the ROOT DIR is: {ROOT_DIR}')
 
 
 
@@ -73,16 +63,17 @@ class ModelConfig(BaseModel):
         """
         Loss function to be optimized.
 
-        `ls` refers to least squares regression.
-        `lad` (least absolute deviation)
-        `huber` is a combination of the two.
-        `quantile` allows quantile regression.
+        ‘log_loss’ refers to binomial and multinomial deviance, the same 
+        as used in logistic regression. It is a good choice for classification 
+        with probabilistic outputs. For loss ‘exponential’, 
+        gradient boosting recovers the AdaBoost algorithm.
 
         Following the research phase, loss is restricted to
-        `ls` and `huber` for this model.
+        `log_loss`  for this model.
         """
 
         allowed_loss_functions = values.get("allowed_loss_functions")
+        print(allowed_loss_functions)
         if value in allowed_loss_functions:
             return value
         raise ValueError(

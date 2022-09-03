@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from packages.src.config.core import config
 from packages.src.processing.data_management import load_dataset
 from packages.src.utils import *
-# from src.utils import *
+from packages.src.utils import *
 
 
 

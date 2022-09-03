@@ -42,8 +42,8 @@
 # rare_label_n_categories: 5
 # loss: ls
 # allowed_loss_functions:
-#   - ls
-#   - huber
+#   - log_loss
+#   
 # """
 
 # INVALID_TEST_CONFIG_TEXT = """

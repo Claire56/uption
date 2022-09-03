@@ -35,8 +35,8 @@ target: labels
 
 # Will cause syntax errors since they begin with numbers
 variables_to_rename:
-  funding_rounds: funds_rounds
-  funding_total_usd: funds_total_amt
+  has_roundA: has_roundA
+  has_roundB: has_roundB
 
 features:
   - 'Unnamed: 0'
@@ -141,7 +141,7 @@ categorical_vars:
   - state_code.1
   - category_code
   - object_id
-  - status
+  # - status
 
 # temporal_vars: YearRemodAdd
 
@@ -182,7 +182,8 @@ rare_label_tol: 0.01
 rare_label_n_categories: 5
 
 # loss function to be optimized
-loss: ls
+loss: log_loss 
 allowed_loss_functions:
-  - ls
-  - huber
+  - log_loss #my choice since its binomial
+  # - deviance  # This is multinomial
+  # - exponential # gradient boosting recovers the AdaBoost algorithm
