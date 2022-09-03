@@ -44,6 +44,7 @@ class ModelConfig(BaseModel):
     variables_to_rename: t.Dict
     features: t.Sequence[str]
     numerical_vars: t.Sequence[str]
+    one_hot_encoding_vars:t.Sequence[str]
     categorical_vars: t.Sequence[str]
     # temporal_vars: str
     numerical_vars_with_na: t.Sequence[str]

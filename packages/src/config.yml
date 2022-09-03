@@ -127,6 +127,9 @@ numerical_vars:
   - avg_participants
   - is_top500
 
+one_hot_encoding_vars:
+  - category_code
+  
 categorical_vars:
   - state_code
   - zip_code

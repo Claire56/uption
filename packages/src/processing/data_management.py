@@ -17,6 +17,31 @@ def load_dataset(*, file_name: str) -> pd.DataFrame:
 
     # rename variables beginning with numbers to avoid syntax errors later
     transformed = dataframe.rename(columns=config.model_config.variables_to_rename)
+
+    # fill missing values
+    transformed = fill_missing(transformed)
+
+    # one hot encoding
+    # transformed = one_hot_encoding(transformed)
+    return transformed
+
+def one_hot_encoding(data):
+    #make categorical numerical 
+    data = pd.get_dummies(data, columns=config.model_config.one_hot_encoding_vars)
+
+    return data
+
+def fill_missing(data):
+    # filling na with mean 
+    for val in config.model_config.numerical_vars_with_na:
+        data[val].fillna(value=data[val].mean(), inplace=True)
+    return data
+
+def load_datasetOLD(*, file_name: str) -> pd.DataFrame:
+    dataframe = pd.read_csv(f"{DATASET_DIR}/{file_name}")
+
+    # rename variables beginning with numbers to avoid syntax errors later
+    transformed = dataframe.rename(columns=config.model_config.variables_to_rename)
     return transformed
 
 

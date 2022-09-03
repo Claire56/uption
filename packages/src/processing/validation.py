@@ -39,7 +39,7 @@ class StartupDataInputSchema(Schema):
     has_roundD = fields.Integer()
     avg_participants = fields.Integer()
     is_top500 = fields.Integer()
-    category_code = fields.Str()
+    # category_code = fields.Str()
        
 
 
