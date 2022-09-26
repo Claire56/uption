@@ -3,10 +3,10 @@ import typing as t
 
 import pandas as pd
 
-from src import __version__ as _version
-from src.config.core import config
-from src.processing.data_management import load_pipeline
-from src.processing.validation import validate_inputs
+from packages.src import __version__ as _version
+from packages.src.config.core import config
+from packages.src.processing.data_management import load_pipeline
+from packages.src.processing.validation import validate_inputs
 
 _logger = logging.getLogger(__name__)
 
